@@ -1,0 +1,184 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sections */
+.section {
+  padding: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero {
+  min-height: 90vh;
+  position: relative;
+}
+
+/* Typography */
+.heroTitle {
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  margin: 1rem 0;
+
+  /* Halftone Effect */
+  background: radial-gradient(var(--foreground) 25%, transparent 26%),
+    radial-gradient(var(--foreground) 25%, transparent 26%),
+    var(--background);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.15));
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle::after {
+  content: 'STUDY.IO';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: -1;
+  background: var(--foreground);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0.1;
+  filter: blur(2px);
+}
+
+.heroSub {
+  font-size: 1.25rem;
+  max-width: 45ch;
+  color: var(--foreground);
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+/* Interactive Elements */
+.ticker {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  display: flex;
+  background: var(--background);
+}
+
+.tickerInner {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tickerItem {
+  margin-right: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Narrative Section */
+.narrativeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.narrativeText {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-family: var(--font-display);
+}
+
+/* Feature Grid */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.featureCard {
+  padding: 3rem;
+  border: 1px solid var(--border);
+  transition: background 0.4s var(--ease-out-expo);
+}
+
+.featureCard:hover {
+  background: var(--accent-muted);
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.cta {
+  display: inline-flex;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: var(--background);
+  font-family: var(--font-technical);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.cta:hover {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+  margin-left: 1rem;
+}
+
+/* Footer / Conversion */
+.footer {
+  padding: 10rem 0 4rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer h2 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .narrativeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer h2 {
+    font-size: 3.5rem;
+  }
+}

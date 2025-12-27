@@ -1,0 +1,90 @@
+.container {
+    min-height: 100vh;
+    background-color: var(--background);
+    padding: 4rem var(--page-padding);
+}
+
+.backLink {
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--foreground);
+    opacity: 0.7;
+    text-decoration: none;
+    margin-bottom: 4rem;
+    transition: opacity 0.3s;
+    display: inline-block;
+}
+
+.backLink:hover {
+    opacity: 1;
+}
+
+.header {
+    margin-bottom: 6rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4rem;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-family: var(--font-technical);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+.contentRow {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 6rem;
+}
+
+.columnTitle {
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.materialList,
+.requestList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.viewButton {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-technical);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.viewButton:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+    .contentRow {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}

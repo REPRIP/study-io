@@ -1,0 +1,108 @@
+.container {
+    min-height: 100vh;
+    background-color: var(--background);
+    padding: 4rem var(--page-padding);
+    display: flex;
+    justify-content: center;
+}
+
+.formCard {
+    width: 100%;
+    max-width: 700px;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.helpText {
+    font-family: var(--font-technical);
+    font-size: 0.875rem;
+    opacity: 0.5;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.formGroup {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-family: var(--font-technical);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+
+.input {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    outline: none;
+    transition: border-bottom-color 0.3s var(--ease-out-expo);
+}
+
+.input:focus {
+    border-bottom-color: var(--accent);
+}
+
+.submitButton {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: var(--background);
+    border: none;
+    font-family: var(--font-technical);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    width: auto;
+    align-self: flex-start;
+}
+
+.submitButton:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.submitButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cancelLink {
+    margin-left: 2rem;
+    font-family: var(--font-technical);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--foreground);
+    opacity: 0.4;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.cancelLink:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,28 @@
+.requestCard {
+    background: var(--background);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.requestCard:hover {
+    background-color: var(--accent-muted);
+    border-color: var(--accent);
+}
+
+.requestTitle {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.requestMeta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}

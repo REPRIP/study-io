@@ -1,0 +1,96 @@
+:root {
+  /* Archival Minimalist Palette */
+  --background: #FDFCF0;
+  /* Soft Cream */
+  --foreground: #1A1A1A;
+  /* Deep Charcoal */
+  --accent: #16423C;
+  /* Forest Green */
+  --accent-muted: rgba(22, 66, 60, 0.1);
+  --border: rgba(26, 26, 26, 0.1);
+
+  /* Typography Tokens */
+  --font-display: var(--font-serif), serif;
+  --font-body: var(--font-sans), sans-serif;
+  --font-technical: var(--font-mono), monospace;
+
+  /* Spacing & Layout */
+  --page-padding: 2.5rem;
+  --max-width: 1440px;
+  --section-gap: 12rem;
+
+  /* Animations */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 1.5rem;
+    --section-gap: 6rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s var(--ease-out-expo);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* Base Utility Classes */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+.mono {
+  font-family: var(--font-technical);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
+}
+
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

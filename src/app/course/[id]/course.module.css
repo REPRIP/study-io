@@ -1,0 +1,101 @@
+.container {
+    min-height: 100vh;
+    background-color: var(--background);
+    padding: 4rem var(--page-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.backLink {
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--foreground);
+    opacity: 0.7;
+    text-decoration: none;
+    margin-bottom: 4rem;
+    transition: opacity 0.3s var(--ease-out-expo);
+    display: inline-block;
+}
+
+.backLink:hover {
+    opacity: 1;
+}
+
+.header {
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.subtitle {
+    font-family: var(--font-technical);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+}
+
+.subjectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.subjectCard {
+    text-decoration: none;
+    color: inherit;
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    transition: all 0.4s var(--ease-out-expo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subjectCard:hover {
+    background-color: var(--accent-muted);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.subjectCode {
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.subjectName {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.semesterTag {
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .subjectsGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,62 @@
+.materialCard {
+    background: var(--background);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.materialCard:hover {
+    background-color: var(--accent-muted);
+    border-color: var(--accent);
+}
+
+.materialContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.materialTitle {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.materialType {
+    font-family: var(--font-technical);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.materialMeta {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.viewButton {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 0.75rem 2rem;
+    background: var(--accent);
+    color: var(--background);
+    font-family: var(--font-technical);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.3s var(--ease-out-expo);
+}
+
+.viewButton:hover {
+    opacity: 0.9;
+}
