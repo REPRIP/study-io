@@ -6,7 +6,9 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Database } from '@/types/supabase'
 
-export default function CreateRequestPage() {
+import { Suspense } from 'react'
+
+function RequestForm() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const subjectIdParam = searchParams.get('subject_id')
@@ -92,5 +94,13 @@ export default function CreateRequestPage() {
                 </form>
             </div>
         </div>
+    )
+}
+
+export default function CreateRequestPage() {
+    return (
+        <Suspense fallback={<div className={styles.container}>Loading Inquiry...</div>}>
+            <RequestForm />
+        </Suspense>
     )
 }
