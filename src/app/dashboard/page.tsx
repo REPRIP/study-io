@@ -36,8 +36,8 @@ export default async function DashboardPage() {
         else if (newProfile) profile = newProfile
     }
 
-    const displayName = profile?.username || user.email?.split('@')[0] || 'Unknown Student'
-    const displayRep = profile?.reputation ?? 0
+    const displayName = (profile as any)?.username || user.email?.split('@')[0] || 'Unknown Student'
+    const displayRep = (profile as any)?.reputation ?? 0
 
     return (
         <div className={styles.container}>
@@ -77,7 +77,7 @@ export default async function DashboardPage() {
 
                 <div className={styles.universitiesSection}>
                     <h2 className={`${styles.sectionTitle} reveal-up`}>University Directory</h2>
-                    <UniversityList universityId={profile?.university_id} />
+                    <UniversityList universityId={(profile as any)?.university_id} />
                 </div>
             </main>
         </div>
