@@ -6,7 +6,9 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Database } from '@/types/supabase'
 
-export default function UploadPage() {
+import { Suspense } from 'react'
+
+function UploadForm() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const subjectIdParam = searchParams.get('subject_id')
@@ -214,5 +216,13 @@ export default function UploadPage() {
                 </form>
             </div>
         </div>
+    )
+}
+
+export default function UploadPage() {
+    return (
+        <Suspense fallback={<div className={styles.container}>Loading Archive...</div>}>
+            <UploadForm />
+        </Suspense>
     )
 }
